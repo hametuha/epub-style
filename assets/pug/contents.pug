@@ -1,0 +1,23 @@
+extends templates/_layout
+
+
+block vars
+    -
+        var title = 'こころ';
+        var bodyclass = 'content rtl';
+
+
+block epubBody
+    .header.header--afterwords
+        h1.title=title
+        p.header__author 夏目漱石
+        .header__lead
+            | このファイルは、インターネットの図書館、
+            | 青空文庫（http://www.aozora.gr.jp/）で作られました。
+            | 入力、校正、制作にあたったのは、ボランティアの皆さんです。
+
+    article.content.content--script.content--afterwords.clearfix !{content}
+
+
+    footer.footer.footer--content
+        | &copy; 1914 Natsume Sōseki

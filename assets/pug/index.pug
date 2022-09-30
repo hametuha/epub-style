@@ -1,0 +1,25 @@
+extends templates/_layout
+
+block vars
+    -
+        var title = 'こころ';
+        var bodyclass = 'index';
+        var toc = [
+            { id: 'titlepage', label: '表紙' },
+            { id: 'preface', label: '序文' },
+            { id: 'contents', label: '本文' },
+            { id: 'authors', label: '著者一覧' },
+            { id: 'ads', label: '広告' },
+            { id: 'colophon', label: '奥付' }
+        ];
+
+block epubBody
+    .header.header--toc
+        h1.title=title + '目次'
+
+    section.content.content--toc.clearfix
+        nav#toc(epub:type="toc")
+            ol
+                each item in toc
+                    li(epub:type="toc")
+                        a(href= item.id + ".html")=item.label

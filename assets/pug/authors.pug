@@ -1,0 +1,34 @@
+extends templates/_layout
+
+
+block vars
+    -
+        var title = '著者一覧';
+        var bodyclass = 'contributors ltr';
+        var authors = [
+            { name: '夏目漱石', ruby: 'なつめそうせき', label: '著者' },
+        ];
+
+
+block epubBody
+    .header.header--creatros
+        h1.title 執筆者一覧
+
+    article.content.content--creators
+        each author in authors
+            .author-box.clearfix
+                img.avatar(src='img/author.jpg')
+                h2
+                    ruby
+                        | #{author.name}
+                        rt=author.ruby
+                    small=author.label
+                .excerpt 夏目 漱石（1867年2月9日 - 1916年12月9日）は、日本の教師・小説家・評論家・英文学者・俳人。本名は夏目 金之助。
+                dl.contact.clearfix
+                    dt Webサイト
+                    dd
+                        a(href='https://hametuha.com') #{author.name} のホームページ
+                    dt twitter
+                    dd
+                        a(href="https://twitter.com/hametuha") @hametuha
+

@@ -1,0 +1,55 @@
+.content--ads {
+
+	$border-style: 3px double $black;
+
+	.ltr & {
+		border-top: $border-style;
+		padding-top: 2em;
+	}
+
+	.rtl & {
+		border-right: $border-style;
+		padding-right: 2em;
+	}
+
+
+	.ads {
+
+		&-title {
+			font-size: 1.8em;
+		}
+		&-category {
+			font-size: 0.5em;
+			display: inline-block;
+			color: $black;
+			border: 2px solid $black;
+			@at-root .ltr & {
+				padding: 0.25em 0.5em;
+				margin-left: 0.5em;
+			}
+			@at-root .rtl & {
+				padding: 0.5em 0.25em;
+				margin-top: 0.5em;
+			}
+		}
+
+		&-author {
+			font-size: 1.5em;
+			text-align: right;
+		}
+
+		&-lead {
+			@at-root .ltr & {
+				border-bottom: $border-style;
+				padding-bottom: 2em;
+				margin: 1em 0 2em;
+			}
+			@at-root .rtl & {
+				border-left: $border-style;
+				padding-left: 2em;
+				margin: 0 1em 0 2em;
+			}
+		}
+	}
+
+}

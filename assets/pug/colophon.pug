@@ -1,0 +1,37 @@
+extends templates/_layout
+
+
+block vars
+    -
+        var title = '書誌情報';
+        var bodyclass = 'colophon ltr';
+        var values = [
+            { label: '書名', value: 'こころ' },
+            { label: '著者', value: '夏目漱石' },
+            { label: '発行者', value: '森鴎外' },
+            { label: '発行所', value: '破滅派' },
+            { label: '底本', value: 'こころ」集英社文庫、集英社<br />1991（平成3）年2月25日第1刷<br />1995（平成7）年6月14日第10刷' },
+        ];
+
+
+block epubBody
+    .header.header--colohpon
+        h1.title=title
+        .meta
+            .date
+                | 2022年8月31日発行
+                br
+                | 2022年9月30日更新
+
+    article.content.content--colophon(epub:type='colophon')
+        p.text-center
+            img(src='img/logo.png' alt='破滅派' width=150 height=75)
+        table.colophon
+            caption 書誌情報
+            each v in values
+                tr
+                    th=v.label
+                    td !{v.value}
+
+        footer.footer.footer--colophon
+            | &copy; 2022 Hametuha

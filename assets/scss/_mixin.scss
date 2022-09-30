@@ -1,0 +1,40 @@
+
+// Logical properties.
+@mixin logical-property($values, $is-margin: true) {
+	@if ($is-margin) {
+		$property: margin;
+	}
+	$property: padding !default;
+	@each $vendor in (-moz-, -webkit-, "" ) {
+		@if (4 == length($values)) {
+			#{$vendor}#{$property}-before: nth($values, 1);
+			#{$vendor}#{$property}-end: nth($values, 2);
+			#{$vendor}#{$property}-after: nth($values, 3);
+			#{$vendor}#{$property}-start: nth($values, 4);
+		} @else if( 3 == length($values) ) {
+			#{$vendor}#{$property}-before: nth($values, 1);
+			#{$vendor}#{$property}-end: nth($values, 2);
+			#{$vendor}#{$property}-after: nth($values, 3);
+			#{$vendor}#{$property}-start: nth($values, 2);
+		} @else if( 2 == length($values) ) {
+			#{$vendor}#{$property}-before: nth($values, 1);
+			#{$vendor}#{$property}-end: nth($values, 2);
+			#{$vendor}#{$property}-after: nth($values, 1);
+			#{$vendor}#{$property}-start: nth($values, 2);
+		} @else {
+			#{$vendor}#{$property}-before: nth($values, 1);
+			#{$vendor}#{$property}-end: nth($values, 1);
+			#{$vendor}#{$property}-after: nth($values, 1);
+			#{$vendor}#{$property}-start: nth($values, 1);
+		}
+	}
+}
+
+@mixin clearfix() {
+	&::after {
+		content: "";
+		display: block;
+		height: 0;
+		clear: both;
+	}
+}

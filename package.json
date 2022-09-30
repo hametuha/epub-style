@@ -1,0 +1,53 @@
+{
+  "name": "@hametuha/epub-style",
+  "version": "1.0.1",
+  "description": "A set of styles for ePub.",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp html",
+    "gulp": "gulp",
+    "package": "gulp build",
+    "fix:js": "eslint --fix -c .eslintrc assets/js",
+    "fix:css": "stylelint --fix assets/scss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hametuha/epub-style.git"
+  },
+  "keywords": [
+    "epub"
+  ],
+  "engines": {
+    "node": ">= 14"
+  },
+  "author": "Hametuha INC. <info@hametuha.co.jp>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hametuha/epub-style/issues"
+  },
+  "homepage": "https://github.com/hametuha/epub-style#readme",
+  "devDependencies": {
+    "bootstrap": "^5.2.1",
+    "browser-sync": "^2.27.10",
+    "eslint": "^8.23.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-load-plugins": "^2.0.8",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylelint": "^13.0.0",
+    "gulp-svgmin": "^4.1.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "node-sass": "^7.0.3",
+    "stylelint-config-wordpress": "^17.0.0",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^5.74.0",
+    "webpack-stream": "^7.0.0"
+  }
+}

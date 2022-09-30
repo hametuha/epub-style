@@ -1,0 +1,14 @@
+extends templates/_layout
+
+block vars
+    - var title = 'こころ';
+    - var bodyclass = 'titlepage';
+
+block epubBody
+    section.titlepage(epub:type='titlepage')
+        h1.titlepage__title
+            span=title
+            small.subtitle 日本古典文学全集100
+            small 夏目漱石
+            small.publisher-credit 破滅派
+

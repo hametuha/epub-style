@@ -1,0 +1,10 @@
+doctype html
+block vars
+html(xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" class="epub-" + bodyclass)
+	head
+		meta(charset="UTF-8")
+		title= title
+		meta( name="viewport" content="width=device-width")
+		link(rel="stylesheet" type="text/css" href="css/epub.css?version=#{version}")
+	body(class=bodyclass)
+		block epubBody

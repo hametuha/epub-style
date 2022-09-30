@@ -1,0 +1,48 @@
+extends templates/_layout
+
+
+block vars
+    -
+        var title = '広告';
+        var bodyclass = 'afterwords rtl';
+        var values = [
+            {
+                title: 'アウレリャーノがやってくる',
+                category: '文芸',
+                author: '高橋文樹',
+                lead: '新潮新人賞受賞作。文芸同人誌破滅派をめぐるエキセントリック・ビルドゥングス・ロマン。'
+            },
+            {
+                title: 'シン・サークルクラッシャー麻紀',
+                category: '文芸',
+                author: '佐川恭一',
+                lead: 'あのサークルクラッシャーが帰ってきた！　令和のサークルクラッシュ文学最高峰！'
+            },
+            {
+                title: 'ギークに銃はいらない',
+                category: 'ＳＦ',
+                author: '斧田小夜',
+                lead: '俺たちは銃なんかなくたってあいつらを殺せる――著者初のＳＦ短編集'
+            },
+        ];
+
+
+block epubBody
+    .header.header--afterwords
+        h1.title=title
+        .header__lead
+            | 破滅派から刊行されている書籍の一覧です。
+            | すべての書籍は
+            a(href='https://hametuha.com') こちら
+            | からご覧ください。
+
+    article.content.content--ads.content--afterwords.clearfix
+        each v in values
+            h2.ads-title
+                | #{v.title}
+                small.ads-category=v.category
+            p.ads-author=v.author
+            blockquote.ads-lead
+                p=v.lead
+                p.text-center
+                    a.ads-btn(href='https://hametuha.com') Amazonで見る
